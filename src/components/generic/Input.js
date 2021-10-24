@@ -2,49 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hour: 0,
-      min: 0,
-      sec: 0,
-    };
-  }
-
-  // Update the hour, min, sec values
-  handleChange(event) {
-    // Validate the value, including hour, can be up to 59
-    if (event.target.value < 60 && event.target.value >= 0) {
-      this.setState({[event.target.name]: event.target.value});
-    }
-  }
-  // Convert to seconds
-  handleSubmit(event) {
-    const {hour, min, sec} = this.state;
-    const totalSeconds = hour * 60 * 60 + min * 60 + sec;
-    this.props.onSubmit(totalSeconds);
-  }
-
   render() {
-    // const { onSubmit } = this.props;
-    const {hour, min, sec} = this.state;
+    const {value, onChange, name, label, maxNum} = this.props;
     return (
-      <form>
-        <label>
-          Hour
-          <input type="text" name="hour" value={hour} />
-        </label>
-        <label>
-          Min
-          <input type="text" name="min" value={min} />
-        </label>
-        <label>
-          Sec
-          <input type="text" name="sec" value={sec} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-    );
+      <React.Fragment>
+        <label htmlFor={name}>{name}</label>
+        <input
+          id={name}
+          name={name}
+          type="number"
+          min="0"
+          max={maxNum}
+          onChange={onChange}
+          value={value}
+        />
+      </React.Fragment>
+    )
   }
 };
 
@@ -53,9 +26,30 @@ Input.docs =   {
     title: 'Input ',
     props: [
       {
-        prop: 'onSubmit',
-        key: 'onSubmit',
-        description: "Callback for submission of input time",
+        prop: 'name',
+        key: 'name',
+        description: 'Name of input field',
+        type: 'string',
+        defaultValue: 'Entry',
+      },
+      {
+        prop: 'value',
+        key: 'value',
+        description: 'Value of input field',
+        type: 'number from 0 to maxNum',
+        defaultValue: '0',
+      },
+      {
+        prop: 'maxNum',
+        key: 'maxNum',
+        description: 'Maximum number allowed in input field',
+        type: 'number',
+        defaultValue: '86400 (seconds in 24 hours)',
+      },
+      {
+        prop: 'onChange',
+        key: 'onChange',
+        description: "Callback for change of input",
         type: "function",
         defaultValue: "none",
       }
@@ -63,7 +57,16 @@ Input.docs =   {
 }
 
 Input.propTypes = {
-  onSubmit: PropTypes.func,
+  name: PropTypes.string,
+  value: PropTypes.number,
+  maxNum: PropTypes.number,
+  onChange: PropTypes.func.isRequired,
+};
+
+Input.defaultProps = {
+  name: 'Entry',
+  value: 0,
+  maxNum: 86400, // 24 hours
 };
 
 export default Input;
