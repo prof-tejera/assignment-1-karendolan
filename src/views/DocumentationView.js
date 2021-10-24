@@ -5,9 +5,10 @@ import DocumentComponent from "../components/documentation/DocumentComponent";
 
 // Components to describe
 import Loading from "../components/generic/Loading";
+import DisplayTime from "../components/generic/DisplayTime";
 
 // The list of components to Describe
-const DocList = [Loading];
+const DocList = [Loading, DisplayTime];
 
 const Container = styled.div`
   display: flex;
