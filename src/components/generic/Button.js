@@ -4,31 +4,43 @@ import styled from "styled-components";
 
 const primaryColor = "#ffa2bf";
 
-const sizeMapping = {
-  small: 10,
-  medium: 14,
-  large: 20,
-};
-
-const ButtonContainer = styled.div`
+// Make rounded corner button, but not as round as the RoundsDisplay
+// Add different style for hover and active (click) to emphasize user action
+const ButtonStyled = styled.input`
   display: block;
-  width: ${(props) => props.size}px;
-  height: ${(props) => props.size}px;
+  width: 100px;
+  height: 60px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
   background-color: ${(props) => props.color};
-  border-radius: 100%;
+  border: none;
+  border-radius: 20px;
+  color: ${(props) => props.active ? "purple" : "blue"};
+  &:hover {
+        outline: none;
+        box-shadow: 0px 0px 6px black;
+    };
+  &:active {
+        outline: none;
+        box-shadow: 0px 0px 2px red;
+        color: green;
+        opacity: 0.8;
+    };
 `;
 
 class Button extends React.Component {
   render() {
-    <ButtonContainer
-      
-    />
-    const size = sizeMapping[this.props.size];
-    const { color } = this.props;
+    const {size, color, text, onClick} = this.props;
     return (
-      <div>
-        Button!
-      </div>
+        <ButtonStyled
+          size={size}
+          type="Button"
+          value={text}
+          color={color}
+          active={true}
+          onClick={onClick}
+        />
     );
   }
 };
@@ -40,14 +52,14 @@ Button.docs =   {
       {
         prop: 'size',
         key: 'size',
-        description: "Changes the size of the loading spinner",
+        description: "Changes the size of the button",
         type: "string",
         defaultValue: "medium",
       },
       {
         prop: 'color',
         key: 'color',
-        description: "Changes the color of the loading spinner",
+        description: "Changes the color of the button",
         type: "string",
         defaultValue: primaryColor,
       },
@@ -63,7 +75,7 @@ Button.docs =   {
         key: 'onClick',
         description: "Callback for click event on button",
         type: "function",
-        defaultValue: "none",
+        defaultValue: "ClickMe",
       }
     ]
 }
@@ -78,7 +90,7 @@ Button.propTypes = {
 Button.defaultProps = {
   size: "medium",
   color: primaryColor,
-  text: "",
+  text: "ClickMe",
 };
 
 export default Button;

@@ -23,9 +23,12 @@ const RenderComponent = styled.div`
   padding: 25px;
   display: flex;
   align-items: center;
+  flex-grow: 1;
 `;
 
-const Documentation = styled.table``;
+const Documentation = styled.table`
+  flex-grow: 1;
+`;
 
 class DocumentComponent extends React.Component {
   render() {

@@ -13,7 +13,7 @@ const sizeMapping = {
 const Container = styled.div`
 `;
 
-const Dot = styled.span`
+const Round = styled.span`
   display: block;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
@@ -24,7 +24,7 @@ const Dot = styled.span`
   opacity: 0.3;
 `;
 
-const ActiveDot = styled.span`
+const ActiveRound = styled.span`
   display: block;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
@@ -46,7 +46,7 @@ const ActiveDot = styled.span`
   }
 `;
 
-const DotGroup = styled.div`
+const RoundGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,20 +62,20 @@ class DisplayRounds extends React.Component {
     const dots = Array.from(Array(numRounds), (e,i)=>i+1).map(i => {
       if (i === curRound) {
         return (
-          <ActiveDot size={sizeMapping.large} color={color} >{curRound}</ActiveDot>
+          <ActiveRound size={sizeMapping.large} color={color} >{curRound}</ActiveRound>
         )
       } else {
         return (
-          <Dot size={sizeMapping.medium} color={color} />
+          <Round size={sizeMapping.medium} color={color} />
         )
       }
     })
 
     return (
       <Container>
-        <DotGroup>
+        <RoundGroup>
           {dots}
-        </DotGroup>
+        </RoundGroup>
       </Container>
     );
   }

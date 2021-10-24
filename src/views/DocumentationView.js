@@ -5,12 +5,13 @@ import DocumentComponent from "../components/documentation/DocumentComponent";
 
 // Components to describe
 import Loading from "../components/generic/Loading";
+import Button from "../components/generic/Button";
 import DisplayTime from "../components/generic/DisplayTime";
 import Input from "../components/generic/Input";
 import DisplayRounds from "../components/generic/DisplayRounds";
 
 // The list of components to Describe
-const DocList = [Loading, DisplayTime, Input, DisplayRounds];
+const DocList = [Loading, DisplayTime, Input, DisplayRounds, Button];
 
 const Container = styled.div`
   display: flex;

@@ -42,9 +42,9 @@ Input.docs =   {
       {
         prop: 'maxNum',
         key: 'maxNum',
-        description: 'Maximum number allowed in input field',
+        description: 'Maximum input number',
         type: 'number',
-        defaultValue: '86400 (seconds in 24 hours)',
+        defaultValue: '86400',
       },
       {
         prop: 'onChange',
