@@ -13,7 +13,10 @@ class Input extends React.Component {
 
   // Update the hour, min, sec values
   handleChange(event) {
-    this.setState({[event.target.name]: event.target.value});
+    // Validate the value, including hour, can be up to 59
+    if (event.target.value < 60 && event.target.value >= 0) {
+      this.setState({[event.target.name]: event.target.value});
+    }
   }
   // Convert to seconds
   handleSubmit(event) {
@@ -28,15 +31,15 @@ class Input extends React.Component {
     return (
       <form>
         <label>
-          Hour:
+          Hour
           <input type="text" name="hour" value={hour} />
         </label>
         <label>
-          Min:
+          Min
           <input type="text" name="min" value={min} />
         </label>
         <label>
-          Sec:
+          Sec
           <input type="text" name="sec" value={sec} />
         </label>
         <input type="submit" value="Submit" />
@@ -44,6 +47,20 @@ class Input extends React.Component {
     );
   }
 };
+
+// Class description for the docs
+Input.docs =   {
+    title: 'Input ',
+    props: [
+      {
+        prop: 'onSubmit',
+        key: 'onSubmit',
+        description: "Callback for submission of input time",
+        type: "function",
+        defaultValue: "none",
+      }
+    ]
+}
 
 Input.propTypes = {
   onSubmit: PropTypes.func,
