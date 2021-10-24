@@ -19,7 +19,7 @@ class Input extends React.Component {
     const {value, onChange, name, label, maxNum} = this.props;
     return (
       <React.Fragment>
-        <label htmlFor={name}>{name}</label>
+        <label htmlFor={name}>{label}</label>
         <InputStyled
           id={name}
           name={name}
@@ -27,7 +27,7 @@ class Input extends React.Component {
           min="0"
           max={maxNum}
           onChange={onChange}
-          value={value}
+          value={value > 0 ? value : ""}
         />
       </React.Fragment>
     )
@@ -43,6 +43,13 @@ Input.docs =   {
         key: 'name',
         description: 'Name of input field',
         type: 'string',
+        defaultValue: 'entry',
+      },
+      {
+        prop: 'label',
+        key: 'label',
+        description: 'label for input field',
+        type: 'string',
         defaultValue: 'Input',
       },
       {
@@ -50,7 +57,7 @@ Input.docs =   {
         key: 'value',
         description: 'Value of input field',
         type: 'number from 0 to maxNum',
-        defaultValue: '0',
+        defaultValue: 'none',
       },
       {
         prop: 'maxNum',
@@ -78,7 +85,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   name: 'Input',
-  value: 0,
+  value: undefined,
   maxNum: 86400, // 24 hours
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import components
-import DisplayTime from "../generic/DisplayTime";
+import Panel from "../generic/Panel";
 import Input from "../generic/Input";
 
 class Stopwatch extends React.Component {
@@ -9,20 +9,33 @@ class Stopwatch extends React.Component {
     super(props);
     this.state = {
       seconds: 0,
+      curSecond: 0,
     };
   }
 
-  onSubmit(seconds) {
-    this.setState({seconds: seconds});
+  onChange = (event) => {
+    const num = parseInt(event.target.value);
+    this.setState({seconds: num > 0 ? num : 0});
   }
 
   render() {
+    const {seconds, curSecond} = this.state;
+    const timerTitle = "Stopwatch";
     return (
       <div>
-        <DisplayTime
+        <Panel
+            timerTitle={timerTitle}
+            seconds={seconds}
+            curSecond={curSecond}
+            // onStart={onStartHandler}
+            // onStop={onStopHandler}
+            // onPause={onPauseHandler}
         />
         <Input
-          onSubmit={this.onSubmit}
+          onChange={this.onChange}
+          label="Stop time"
+          name="seconds"
+          value={seconds}
         />
       </div>
     );
