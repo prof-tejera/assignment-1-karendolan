@@ -4,11 +4,17 @@ import styled from "styled-components";
 
 const primaryColor = "#ffa2bf";
 
+const sizeMapping = {
+  small: 60,
+  medium: 80,
+  large: 100,
+};
+
 // Make rounded corner button, but not as round as the RoundsDisplay
 // Add different style for hover and active (click) to emphasize user action
 const ButtonStyled = styled.input`
   display: block;
-  width: 100px;
+  width: ${(props) => props.size}px;
   height: 60px;
   padding: 10px 20px;
   text-align: center;
@@ -16,7 +22,6 @@ const ButtonStyled = styled.input`
   background-color: ${(props) => props.color};
   border: none;
   border-radius: 20px;
-  color: ${(props) => props.active ? "purple" : "blue"};
   &:hover {
         outline: none;
         box-shadow: 0px 0px 6px black;
@@ -31,7 +36,8 @@ const ButtonStyled = styled.input`
 
 class Button extends React.Component {
   render() {
-    const {size, color, text, onClick} = this.props;
+    const {color, text, onClick} = this.props;
+    const size = sizeMapping[this.props.size];
     return (
         <ButtonStyled
           size={size}

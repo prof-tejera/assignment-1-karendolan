@@ -52,6 +52,7 @@ const RoundGroup = styled.div`
   justify-content: center;
   &:before {
     content: "Rounds";
+    padding-right:10px;
   }
 `;
 
@@ -118,7 +119,7 @@ DisplayRounds.propTypes = {
 
 DisplayRounds.defaultProps = {
   color: primaryColor,
-  curRound: 2,
+  curRound: 3,
   numRounds: 4,
 };
 

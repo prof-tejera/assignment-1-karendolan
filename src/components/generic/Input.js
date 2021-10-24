@@ -1,5 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const InputStyled = styled.input`
+  display: block;
+  width: 100px;
+  padding: 5px 10px;
+  text-align: left;
+  text-decoration: none;
+  background-color: white;
+  border-width: medium;
+  border-radius: 20px;
+  margin-left: 10px;
+`;
 
 class Input extends React.Component {
   render() {
@@ -7,7 +20,7 @@ class Input extends React.Component {
     return (
       <React.Fragment>
         <label htmlFor={name}>{name}</label>
-        <input
+        <InputStyled
           id={name}
           name={name}
           type="number"
@@ -30,7 +43,7 @@ Input.docs =   {
         key: 'name',
         description: 'Name of input field',
         type: 'string',
-        defaultValue: 'Entry',
+        defaultValue: 'Input',
       },
       {
         prop: 'value',
@@ -64,7 +77,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  name: 'Entry',
+  name: 'Input',
   value: 0,
   maxNum: 86400, // 24 hours
 };
