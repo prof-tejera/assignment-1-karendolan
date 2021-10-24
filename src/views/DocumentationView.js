@@ -3,7 +3,11 @@ import styled from "styled-components";
 
 import DocumentComponent from "../components/documentation/DocumentComponent";
 
+// Components to describe
 import Loading from "../components/generic/Loading";
+
+// The list of components to Describe
+const DocList = [Loading];
 
 const Container = styled.div`
   display: flex;
@@ -17,22 +21,23 @@ const Title = styled.div`
 
 class Documentation extends React.Component {
   render() {
+    // compomose the component elements
+    const components = DocList.map(CurrComp => {
+      const {title, props} = CurrComp.docs;
+      return (
+        <DocumentComponent
+          key={title}
+          title= {title}
+          component= <CurrComp />
+          propDocs={props}
+        />
+      )
+    })
     return (
       <Container>
         <div>
           <Title>Documentation</Title>
-          <DocumentComponent
-            title="Loading spinner "
-            component={<Loading />}
-            propDocs={[
-              {
-                prop: "size",
-                description: "Changes the size of the loading spinner",
-                type: "string",
-                defaultValue: "medium",
-              },
-            ]}
-          />
+          {components}
         </div>
       </Container>
     );

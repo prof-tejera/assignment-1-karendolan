@@ -76,6 +76,28 @@ class Loading extends React.Component {
   }
 }
 
+// Class description for the docs
+Loading.docs =   {
+    title: 'Loading spinner ',
+    component: <Loading />,
+    props: [
+      {
+        prop: 'size',
+        key: 'size',
+        description: "Changes the size of the loading spinner",
+        type: "string",
+        defaultValue: "medium",
+      },
+      {
+        prop: 'color',
+        key: 'color',
+        description: "Changes the color of the loading spinner",
+        type: "string",
+        defaultValue: primaryColor,
+      }
+    ]
+}
+
 Loading.propTypes = {
   size: PropTypes.oneOf(["small", "medium", "large"]),
   color: PropTypes.string,
