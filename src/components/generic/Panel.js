@@ -26,12 +26,10 @@
 
  class Panel extends React.Component {
    render() {
-     const {seconds, inputs, onStart, onStop, status} = this.props;
+     const {seconds, curSecond, inputs, displayTimes, onStart, onStop, status} = this.props;
      return (
        <PanelStyle>
-        <DisplayTime
-          seconds={seconds}
-        />
+        {displayTimes}
         <div>
           <ButtonPanel
             status={status}

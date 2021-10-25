@@ -3,6 +3,7 @@ import React from "react";
 // Import components
 import Panel from "../generic/Panel";
 import Input from "../generic/Input";
+import DisplayTime from "../generic/DisplayTime";
 
 class Stopwatch extends React.Component {
   constructor(props) {
@@ -24,14 +25,27 @@ class Stopwatch extends React.Component {
     const inputs = [
          <Input
           onChange={this.onChange}
-          label="Time"
+          label="End seconds"
           name="seconds"
           value={seconds}
         />
     ];
+
+    const displayTimes = [
+      <DisplayTime
+        label=""
+        seconds={seconds}
+      />,
+      <DisplayTime
+        seconds={curSecond}
+        size='large'
+      />
+    ]
+
     return (
       <div>
         <Panel
+            displayTimes={displayTimes}
             timerTitle={timerTitle}
             seconds={seconds}
             curSecond={curSecond}
