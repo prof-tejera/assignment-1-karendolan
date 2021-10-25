@@ -33,7 +33,7 @@ class Countdown extends React.Component {
           value={seconds}
         />
     ];
-
+    // Countdown displays the single count down time
     const displayTimes = [
       <DisplayTime
         seconds={curSecond}

@@ -30,7 +30,7 @@ class Stopwatch extends React.Component {
           value={seconds}
         />
     ];
-
+    // Stop watch shows 2 display times, the count up and end time
     const displayTimes = [
       <DisplayTime
         label=""

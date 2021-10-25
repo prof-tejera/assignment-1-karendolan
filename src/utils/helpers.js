@@ -5,5 +5,6 @@
 export const STATUS = {
   PAUSED: 'paused',
   RUNNING: 'running',
+  RESTING: 'resting',
   RESET: 'reset',
 };
