@@ -21,21 +21,24 @@ class Stopwatch extends React.Component {
   render() {
     const {seconds, curSecond} = this.state;
     const timerTitle = "Stopwatch";
+    const inputs = [
+         <Input
+          onChange={this.onChange}
+          label="Time"
+          name="seconds"
+          value={seconds}
+        />
+    ];
     return (
       <div>
         <Panel
             timerTitle={timerTitle}
             seconds={seconds}
             curSecond={curSecond}
+            inputs={inputs}
             // onStart={onStartHandler}
             // onStop={onStopHandler}
             // onPause={onPauseHandler}
-        />
-        <Input
-          onChange={this.onChange}
-          label="Stop time"
-          name="seconds"
-          value={seconds}
         />
       </div>
     );

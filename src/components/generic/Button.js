@@ -16,6 +16,7 @@ const ButtonStyled = styled.input`
   display: block;
   width: ${(props) => props.size}px;
   height: 60px;
+  margin: 7px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;

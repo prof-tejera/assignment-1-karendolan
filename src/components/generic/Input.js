@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const InputStyled = styled.input`
-  display: block;
+  display: inline-block;
   width: 100px;
   padding: 5px 10px;
   text-align: left;
@@ -18,7 +18,7 @@ class Input extends React.Component {
   render() {
     const {value, onChange, name, label, maxNum} = this.props;
     return (
-      <React.Fragment>
+      <div>
         <label htmlFor={name}>{label}</label>
         <InputStyled
           id={name}
@@ -29,7 +29,7 @@ class Input extends React.Component {
           onChange={onChange}
           value={value > 0 ? value : ""}
         />
-      </React.Fragment>
+      </div>
     )
   }
 };
