@@ -6,6 +6,7 @@
  import styled from "styled-components";
 
  import DisplayTime from "./DisplayTime";
+ import DisplayRounds from "./DisplayRounds";
  import Input from "./Input";
  import ButtonPanel from "./ButtonPanel";
  import {STATUS} from "../../utils/helpers"
@@ -26,9 +27,10 @@
 
  class Panel extends React.Component {
    render() {
-     const {seconds, curSecond, inputs, displayTimes, onStart, onStop, status} = this.props;
+     const {seconds, curSecond, inputs, displayTimes, displayRounds, onStart, onStop, status} = this.props;
      return (
        <PanelStyle>
+        {displayRounds}
         {displayTimes}
         <div>
           <ButtonPanel
@@ -44,7 +46,8 @@
  Panel.propTypes = {
    curSecond: PropTypes.number,
    totalSeconds: PropTypes.number,
-   rounds: PropTypes.number,
+   displayRound: PropTypes.arrayOf(DisplayRounds),
+   displayTime: PropTypes.arrayOf(DisplayTime),
    restSeconds: PropTypes.number,
    inputs: PropTypes.arrayOf(Input),
    onStart: PropTypes.func,

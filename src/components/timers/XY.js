@@ -3,6 +3,7 @@ import React from "react";
 // Import components
 import Panel from "../generic/Panel";
 import Input from "../generic/Input";
+import DisplayRounds from "../generic/DisplayRounds";
 import DisplayTime from "../generic/DisplayTime";
 import {STATUS} from "../../utils/helpers"
 
@@ -35,21 +36,35 @@ class XY extends React.Component {
         label="Seconds"
         name="work"
         value={workSecs}
+        key="1"
       />,
        <Input
         onChange={this.onChange}
         label="Rounds"
         name="rounds"
         value={rounds}
+        key="2"
       />
     ];
     // Countdown displays the single count down time
     const displayTimes = [
       <DisplayTime
+        label=""
+        seconds={workSecs}
+        key="1"
+      />,
+      <DisplayTime
         seconds={curSecond}
         size='large'
+        key="2"
       />
     ]
+    const displayRounds = [
+      <DisplayRounds
+        numRounds={4} //{rounds}
+        curRound={0} //{curRound}
+      />
+    ];
 
     return (
       <div>
@@ -57,6 +72,7 @@ class XY extends React.Component {
             timerTitle={timerTitle}
             seconds={workSecs}
             curSecond={curSecond}
+            displayRounds={displayRounds}
             inputs={inputs}
             displayTimes={displayTimes}
             // onStart={onStartHandler}
