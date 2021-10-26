@@ -17,13 +17,24 @@ const ButtonStyled = styled.input`
   width: ${(props) => props.size}px;
   height: 60px;
   margin: 7px;
-  padding: 10px 20px;
   text-align: center;
+  font-size: .9em;
   text-decoration: none;
   background-color: ${(props) =>
     {
+      /* Palette color codes */
+      /* */
+      /* Palette URL: http://paletton.com/#uid=34h0r1klhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaI */
       if (props.active) return '#D4B56A';
       return '#806016';
+    }
+  };
+  color: ${(props) =>
+    {
+      /* Palette color codes */
+      /* Palette URL: http://paletton.com/#uid=34h0r1klhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaI */
+      if (props.active) return '#15073B';
+      return '#D4B56A';
     }
   };
   border: none;

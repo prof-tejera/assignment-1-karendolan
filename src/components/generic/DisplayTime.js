@@ -13,10 +13,12 @@ const Container = styled.div`
   font-size: ${(props) => props.size};
   color: #FFFFAA; /*#FFD4AA; #D49E6A;*/
   padding: 20px;
+  background-color: #433075;
 `;
 
 const Label = styled.span`
   margin-right: 5px;
+  color: white;
 `;
 
 class DisplayTime extends React.Component {

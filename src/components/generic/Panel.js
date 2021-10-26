@@ -30,11 +30,11 @@
 
   const ActionContainer = styled.div`
     background-color: #433075;
-    padding: 40px;
+    padding: 40px 20px;
   `;
 
   const ControlsContainer = styled.div`
-    background-color: #635192;
+    background-color: #433075; /*#15073B;/* #635192; */
     padding: 20px 40px;
   `;
 

@@ -17,10 +17,11 @@ const Round = styled.span`
   display: block;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
-  background-color: ${(props) => {
-    if (props.active)  return '#D4B56A';
-    return '#AA8839';
-  }}
+  background: ${(props) => {
+    if (props.active)  return '#D4D46A'; /*'#D4B56A';*/
+    return '#897BAF'; /*'#AA8839';*/
+  }};
+  color: #15073B;
   border-radius: 100%;
   display: inline-flex;
   align-items: center;
@@ -49,6 +50,7 @@ class DisplayRounds extends React.Component {
         <Round
           size={isCurRound ? sizeMapping.large : sizeMapping.medium}
           active={isCurRound}
+          key={i}
         >
           {isCurRound && curRound}
         </Round>

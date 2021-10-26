@@ -38,7 +38,7 @@ class Tabata extends React.Component {
          <Input
           onChange={this.onChange}
           label="Work seconds"
-          name="work"
+          name="Work"
           value={workSecs}
         />,
         <Input

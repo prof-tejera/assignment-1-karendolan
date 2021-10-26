@@ -11,7 +11,7 @@
  const Container = styled.div`
    display: flex;
    flex-direction: row;
-   justify-content: center;
+   justify-content: space-between;
 `;
 
  class ButtonPanel extends React.Component {
@@ -19,17 +19,17 @@
      const {onStart, onStop, onReset, status} = this.props;
      return (
        <Container>
+         <Button
+           size='large'
+           active={false}
+           text='reset'
+           onClick={onReset}
+         />
           <Button
             size='small'
             active={false}
             text='stop'
             onClick={onStop}
-          />
-          <Button
-            size='large'
-            active={false}
-            text='reset'
-            onClick={onReset}
           />
           <Button
             size='large'
