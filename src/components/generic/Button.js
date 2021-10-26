@@ -20,7 +20,12 @@ const ButtonStyled = styled.input`
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  background-color: ${(props) => props.color};
+  background-color: ${(props) =>
+    {
+      if (props.active) return '#D4B56A';
+      return '#806016';
+    }
+  };
   border: none;
   border-radius: 20px;
   &:hover {
@@ -37,15 +42,14 @@ const ButtonStyled = styled.input`
 
 class Button extends React.Component {
   render() {
-    const {color, text, onClick} = this.props;
+    const {active, text, onClick} = this.props;
     const size = sizeMapping[this.props.size];
     return (
         <ButtonStyled
           size={size}
           type="Button"
           value={text}
-          color={color}
-          active={true}
+          active={active}
           onClick={onClick}
         />
     );

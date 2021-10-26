@@ -11,6 +11,8 @@ const fontSizeMap = {
 const Container = styled.div`
   text-align: center;
   font-size: ${(props) => props.size};
+  color: #FFFFAA; /*#FFD4AA; #D49E6A;*/
+  padding: 20px;
 `;
 
 const Label = styled.span`

@@ -15,29 +15,39 @@
    display: flex;
    flex-direction: column;
    justify-content: center;
-   padding: 40px;
-   width: 300px;
-   background-color: yellow;
+   width: 400px;
+   /* Using Gill Sans because it's fun, easy to read, and emits energy */
+   font-family: "Gill Sans", sans-serif;
+   background-color: #897BAF; /*#2E4172; */
+   color: white;
 `;
 
  const InputsContainer = styled.div`
-
-   background-color: yellow;
+       padding: 40px;
 `;
+
+  const ActionContainer = styled.div`
+    background-color: #433075;
+    padding: 40px;
+  `;
 
  class Panel extends React.Component {
    render() {
      const {seconds, curSecond, inputs, displayTimes, displayRounds, onStart, onStop, status} = this.props;
      return (
        <PanelStyle>
-        {displayRounds}
-        {displayTimes}
-        <div>
-          <ButtonPanel
-            status={status}
-          />
-        </div>
-        {inputs}
+        <InputsContainer>
+          {inputs}
+        </InputsContainer>
+        <ActionContainer>
+          {displayTimes}
+          {displayRounds}
+          <div>
+            <ButtonPanel
+              status={status}
+            />
+          </div>
+        </ActionContainer>
        </PanelStyle>
      )
    };

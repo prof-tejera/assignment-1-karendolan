@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const primaryColor = "#ffa2bf";
+const primaryColor = "#804A16";
 
 const sizeMapping = {
   small: 20,
@@ -17,33 +17,16 @@ const Round = styled.span`
   display: block;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => {
+    if (props.active)  return '#D4B56A';
+    return '#AA8839';
+  }}
   border-radius: 100%;
-  transform: scale(0.75);
-  transform-origin: 50% 50%;
-  opacity: 0.3;
-`;
-
-const ActiveRound = styled.span`
-  display: block;
-  width: ${(props) => props.size}px;
-  height: ${(props) => props.size}px;
-  background-color: ${(props) => props.color};
-  border-radius: 100%;
-  opacity: 0.9;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  animation: wobble 1s ease-in-out infinite;
-
-  @keyframes wobble {
-    0% {
-      border-radius: 40%;
-    }
-    100% {
-      border-radius: 100%;
-    }
-  }
+  transform: scale(0.75);
+  transform-origin: 50% 50%;
 `;
 
 const RoundGroup = styled.div`
@@ -51,7 +34,7 @@ const RoundGroup = styled.div`
   align-items: center;
   justify-content: center;
   &:before {
-    content: "Rounds";
+    content: "Round";
     padding-right:10px;
   }
 `;
@@ -59,17 +42,17 @@ const RoundGroup = styled.div`
 class DisplayRounds extends React.Component {
   render() {
     // construct the round row
-    const { numRounds, curRound, color } = this.props;
+    const { numRounds, curRound } = this.props;
     const dots = Array.from(Array(numRounds), (e,i)=>i+1).map(i => {
-      if (i === curRound) {
-        return (
-          <ActiveRound size={sizeMapping.large} color={color} >{curRound}</ActiveRound>
-        )
-      } else {
-        return (
-          <Round size={sizeMapping.medium} color={color} />
-        )
-      }
+      const isCurRound = (i === curRound);
+      return (
+        <Round
+          size={isCurRound ? sizeMapping.large : sizeMapping.medium}
+          active={isCurRound}
+        >
+          {isCurRound && curRound}
+        </Round>
+      );
     })
 
     return (

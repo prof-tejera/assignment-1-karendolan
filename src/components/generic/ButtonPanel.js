@@ -12,7 +12,6 @@
    display: flex;
    flex-direction: row;
    justify-content: center;
-   background-color: yellow;
 `;
 
  class ButtonPanel extends React.Component {
@@ -21,22 +20,22 @@
      return (
        <Container>
           <Button
-            size='large'
-            color='green'
-            text='start'
-            onClick={onStart}
-          />
-          <Button
             size='small'
-            color='grey'
+            active={false}
             text='stop'
             onClick={onStop}
           />
           <Button
             size='large'
-            color='grey'
+            active={false}
             text='reset'
             onClick={onReset}
+          />
+          <Button
+            size='large'
+            active={true}
+            text='start'
+            onClick={onStart}
           />
        </Container>
      )

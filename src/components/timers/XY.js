@@ -62,7 +62,7 @@ class XY extends React.Component {
     const displayRounds = [
       <DisplayRounds
         numRounds={4} //{rounds}
-        curRound={0} //{curRound}
+        curRound={1} //{curRound}
       />
     ];
 
