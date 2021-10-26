@@ -8,7 +8,8 @@ const InputStyled = styled.input`
   padding: 5px 10px;
   text-align: left;
   text-decoration: none;
-  background-color: white;
+  background-color: #B8AFCF; /* #ACA2C7; /* #CFCADF; */
+  color:
   border-width: medium;
   border-radius: 20px;
   margin-left: 10px;
