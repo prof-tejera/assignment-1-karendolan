@@ -9,7 +9,6 @@ const InputStyled = styled.input`
   text-align: left;
   text-decoration: none;
   background-color: #B8AFCF; /* #ACA2C7; /* #CFCADF; */
-  color:
   border-width: medium;
   border-radius: 20px;
   margin-left: 10px;

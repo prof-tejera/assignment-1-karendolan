@@ -23,12 +23,19 @@
 `;
 
  const InputsContainer = styled.div`
-       padding: 40px;
+   background-color: #635192;
+   padding: 40px;
+
 `;
 
   const ActionContainer = styled.div`
     background-color: #433075;
     padding: 40px;
+  `;
+
+  const ControlsContainer = styled.div`
+    background-color: #635192;
+    padding: 20px 40px;
   `;
 
  class Panel extends React.Component {
@@ -42,12 +49,12 @@
         <ActionContainer>
           {displayTimes}
           {displayRounds}
-          <div>
-            <ButtonPanel
-              status={status}
-            />
-          </div>
         </ActionContainer>
+        <ControlsContainer>
+          <ButtonPanel
+            status={status}
+          />
+        </ControlsContainer>
        </PanelStyle>
      )
    };
