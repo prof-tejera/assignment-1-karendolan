@@ -57,7 +57,6 @@ class XY extends React.Component {
     // Countdown displays the single count down time
     const displayTimes = [
       <DisplayTime
-        label=""
         seconds={workSecs}
         key="1"
         active={false}

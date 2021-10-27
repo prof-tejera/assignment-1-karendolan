@@ -38,7 +38,7 @@ class DisplayTime extends React.Component {
         size={textSize}
         activeKey={active ? 'active' : 'inactive'}
       >
-        {label && <Label>{label}</Label>}
+        {!active && label && <Label>{label}</Label>}
         {('00' + hour).slice(-2)}
         :
         {('00' + min).slice(-2)}
@@ -65,7 +65,7 @@ DisplayTime.docs =   {
         key: 'label',
         description: 'Optional label for display time',
         type: 'string',
-        defaultValue: 'none',
+        defaultValue: 'Work',
       },
       {
         prop: 'size',

@@ -63,6 +63,7 @@ class Tabata extends React.Component {
         active={false}
       />,
       <DisplayTime
+        label='a'
         seconds={curSecond}
         size='large'
         active={true}
