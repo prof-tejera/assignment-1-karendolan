@@ -9,9 +9,10 @@ import Button from "../components/generic/Button";
 import DisplayTime from "../components/generic/DisplayTime";
 import Input from "../components/generic/Input";
 import DisplayRounds from "../components/generic/DisplayRounds";
+import Panel from "../components/generic/Panel";
 
 // The list of components to Describe
-const DocList = [Loading, DisplayTime, Input, DisplayRounds, Button];
+const DocList = [Loading, DisplayTime, Input, DisplayRounds, Button, Panel];
 
 const Container = styled.div`
   display: flex;

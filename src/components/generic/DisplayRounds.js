@@ -13,6 +13,7 @@ const sizeMapping = {
 };
 
 const Container = styled.div`
+  background-color: ${GENERIC.PANEL.DISPLAY.background};
 `;
 
 const Round = styled.span`

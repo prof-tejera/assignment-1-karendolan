@@ -72,6 +72,34 @@
    };
  }
 
+ // Class description for the docs
+ Panel.docs =   {
+     title: 'Panel ',
+     props: [
+       {
+         prop: 'seconds',
+         key: 'seconds',
+         description: "Changes the time diplayed",
+         type: "integer",
+         defaultValue: 0,
+       },
+       {
+         prop: 'label',
+         key: 'label',
+         description: 'Optional label for display time',
+         type: 'string',
+         defaultValue: 'none',
+       },
+       {
+         prop: 'size',
+         key: 'size',
+         description: 'Size of display time',
+         type: 'string',
+         defaultValue: 'medium',
+       }
+     ]
+ }
+
  Panel.propTypes = {
    curSecond: PropTypes.number,
    totalSeconds: PropTypes.number,

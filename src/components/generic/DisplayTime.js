@@ -15,6 +15,7 @@ const Container = styled.div`
   color: ${(props) => {
     return GENERIC.DISPLAY_TIME[props.activeKey].color
   }};
+  background-color: ${GENERIC.PANEL.DISPLAY.background};
 `;
 
 const Label = styled.span`
@@ -85,6 +86,7 @@ DisplayTime.propTypes = {
 
 DisplayTime.defaultProps = {
   seconds: 0,
+  label: 'Work',
   size: 'medium',
   active: true,
 };
