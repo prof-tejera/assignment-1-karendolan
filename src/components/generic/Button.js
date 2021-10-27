@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import GENERIC  from "../../shared/COLOR";
 
-const primaryColor = "#ffa2bf";
+const primaryColor =  GENERIC.BUTTON_COLORS.active.color;
 
 const sizeMapping = {
   small: 60,
@@ -20,25 +21,14 @@ const ButtonStyled = styled.input`
   text-align: center;
   font-size: .9em;
   text-decoration: none;
-  background-color: ${(props) =>
-    {
-      /* Palette color codes */
-      /* */
-      /* Palette URL: http://paletton.com/#uid=34h0r1klhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaI */
-      if (props.active) return '#D4B56A';
-      return '#806016';
-    }
-  };
-  color: ${(props) =>
-    {
-      /* Palette color codes */
-      /* Palette URL: http://paletton.com/#uid=34h0r1klhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaI */
-      if (props.active) return '#15073B';
-      return '#D4B56A';
-    }
-  };
+  background-color: ${(props) => {
+    return GENERIC.BUTTON_COLORS[props.activeKey].background
+  }};
+  color: ${(props) => {
+    return GENERIC.BUTTON_COLORS[props.activeKey].color
+  }};
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   &:hover {
         outline: none;
         box-shadow: 0px 0px 6px black;
@@ -46,7 +36,6 @@ const ButtonStyled = styled.input`
   &:active {
         outline: none;
         box-shadow: 0px 0px 2px red;
-        color: green;
         opacity: 0.8;
     };
 `;
@@ -60,7 +49,7 @@ class Button extends React.Component {
           size={size}
           type="Button"
           value={text}
-          active={active}
+          activeKey={ active ? 'active' : 'inactive' }
           onClick={onClick}
         />
     );
@@ -79,40 +68,40 @@ Button.docs =   {
         defaultValue: "medium",
       },
       {
-        prop: 'color',
-        key: 'color',
-        description: "Changes the color of the button",
-        type: "string",
-        defaultValue: primaryColor,
+        prop: 'active',
+        key: 'active',
+        description: 'Identifies the primary button',
+        type: 'boolean',
+        defaultValue: 'true',
       },
       {
         prop: 'text',
         key: 'text',
-        description: "The text to display on the button",
-        type: "string",
-        defaultValue: "none",
+        description: 'The text to display on the button',
+        type: 'string',
+        defaultValue: 'none',
       },
       {
         prop: 'onClick',
         key: 'onClick',
-        description: "Callback for click event on button",
-        type: "function",
-        defaultValue: "ClickMe",
+        description: 'Callback for click event on button',
+        type: 'function',
+        defaultValue: 'ClickMe',
       }
     ]
 }
 
 Button.propTypes = {
-  size: PropTypes.oneOf(["small", "medium", "large"]),
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
   color: PropTypes.string,
   text: PropTypes.string,
   onClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
-  size: "medium",
+  size: 'medium',
+  text: 'ClickMe',
   color: primaryColor,
-  text: "ClickMe",
 };
 
 export default Button;

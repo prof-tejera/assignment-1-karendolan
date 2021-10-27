@@ -35,10 +35,12 @@ class Stopwatch extends React.Component {
       <DisplayTime
         label=""
         seconds={seconds}
+        active={false}
       />,
       <DisplayTime
         seconds={curSecond}
         size='large'
+        active={true}
       />
     ]
 

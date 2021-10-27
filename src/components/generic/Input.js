@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import GENERIC  from "../../shared/COLOR";
+
+const primaryColor =  GENERIC.INPUT.background;
 
 const InputStyled = styled.input`
   display: inline-block;
@@ -8,10 +11,15 @@ const InputStyled = styled.input`
   padding: 5px 10px;
   text-align: left;
   text-decoration: none;
-  background-color: #B8AFCF; /* #ACA2C7; /* #CFCADF; */
+  color: ${GENERIC.INPUT.color};
+  background-color: ${primaryColor};
   border-width: medium;
   border-radius: 20px;
   margin-left: 10px;
+`;
+
+const LabelStyled = styled.label`
+  color: ${GENERIC.INPUT.color};
 `;
 
 class Input extends React.Component {
@@ -19,7 +27,11 @@ class Input extends React.Component {
     const {value, onChange, name, label, maxNum} = this.props;
     return (
       <div>
-        <label htmlFor={name}>{label}</label>
+        <LabelStyled
+          htmlFor={name}
+        >
+          {label}
+        </LabelStyled>
         <InputStyled
           id={name}
           name={name}

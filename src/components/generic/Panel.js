@@ -1,5 +1,6 @@
 /**
  * Panel handles layout of the timer
+ * It also controls the color palette
  */
  import React from "react";
  import PropTypes from "prop-types";
@@ -9,7 +10,10 @@
  import DisplayRounds from "./DisplayRounds";
  import Input from "./Input";
  import ButtonPanel from "./ButtonPanel";
- import {STATUS} from "../../utils/helpers"
+ import { STATUS } from "../../utils/helpers";
+ import GENERIC  from "../../shared/COLOR";
+
+ const primaryColor =  GENERIC.PANEL.DEFAULT.background;
 
  const PanelStyle = styled.div`
    display: flex;
@@ -18,23 +22,23 @@
    width: 400px;
    /* Using Gill Sans because it's fun, easy to read, and emits energy */
    font-family: "Gill Sans", sans-serif;
-   background-color: #897BAF; /*#2E4172; */
-   color: white;
+   background-color: ${primaryColor};
+   color: ${GENERIC.PANEL.DEFAULT.color};
 `;
 
  const InputsContainer = styled.div`
-   background-color: #635192;
+   color: ${GENERIC.PANEL.INPUT.color};
+   background-color: ${GENERIC.PANEL.INPUT.background};
    padding: 40px;
-
 `;
 
-  const ActionContainer = styled.div`
-    background-color: #433075;
+  const DisplayContainer = styled.div`
+    background-color: ${GENERIC.PANEL.DISPLAY.background};
     padding: 40px 20px;
   `;
 
   const ControlsContainer = styled.div`
-    background-color: #433075; /*#15073B;/* #635192; */
+    background-color: ${GENERIC.PANEL.CONTROLS.background};
     padding: 20px 40px;
   `;
 
@@ -46,10 +50,10 @@
         <InputsContainer>
           {inputs}
         </InputsContainer>
-        <ActionContainer>
+        <DisplayContainer>
           {displayTimes}
           {displayRounds}
-        </ActionContainer>
+        </DisplayContainer>
         <ControlsContainer>
           <ButtonPanel
             status={status}
@@ -77,6 +81,7 @@
  Panel.defaultProps = {
    size: "medium",
    text: "ClickMe",
+   color: primaryColor,
  };
 
  export default Panel;

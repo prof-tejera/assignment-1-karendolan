@@ -5,7 +5,7 @@ import Panel from "../generic/Panel";
 import Input from "../generic/Input";
 import DisplayRounds from "../generic/DisplayRounds";
 import DisplayTime from "../generic/DisplayTime";
-import {STATUS} from "../../utils/helpers"
+import { STATUS } from "../../utils/helpers"
 
 class XY extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class XY extends React.Component {
   }
 
   render() {
-    const {workSecs, rounds, curRound, curSecond} = this.state;
+    const { workSecs, rounds, curRound, curSecond } = this.state;
     const timerTitle = "XY";
     const inputs = [
        <Input
@@ -52,11 +52,13 @@ class XY extends React.Component {
         label=""
         seconds={workSecs}
         key="1"
+        active={false}
       />,
       <DisplayTime
         seconds={curSecond}
         size='large'
         key="2"
+        active={true}
       />
     ]
     const displayRounds = [

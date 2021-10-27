@@ -33,7 +33,7 @@ class Tabata extends React.Component {
     const timerTitle = "Tabata";
     // The amount of total secs in current Tabata segment
     const seconds =  status === STATUS.RESTING ? restSecs : workSecs;
-    const label = status === STATUS.RESTING ? 'rest' : 'work';
+    const label = status === STATUS.RESTING ? 'Rest' : 'Work';
     const inputs = [
          <Input
           onChange={this.onChange}
@@ -60,10 +60,12 @@ class Tabata extends React.Component {
         label={label}
         seconds={seconds}
         key="1"
+        active={false}
       />,
       <DisplayTime
         seconds={curSecond}
         size='large'
+        active={true}
       />
     ];
     const displayRounds = [

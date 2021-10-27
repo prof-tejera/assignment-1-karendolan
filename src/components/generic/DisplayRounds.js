@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import GENERIC  from "../../shared/COLOR";
 
-const primaryColor = "#804A16";
+// Default color for doc render
+const primaryColor =  GENERIC.DISPLAY_ROUNDS.inactive.color;
 
 const sizeMapping = {
   small: 20,
@@ -17,11 +19,12 @@ const Round = styled.span`
   display: block;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
-  background: ${(props) => {
-    if (props.active)  return '#D4D46A'; /*'#D4B56A';*/
-    return '#897BAF'; /*'#AA8839';*/
+  background-color: ${(props) => {
+    return GENERIC.DISPLAY_ROUNDS[props.activeKey].background
   }};
-  color: #15073B;
+  color: ${(props) => {
+    return GENERIC.DISPLAY_ROUNDS[props.activeKey].color
+  }};
   border-radius: 100%;
   display: inline-flex;
   align-items: center;
@@ -36,6 +39,7 @@ const RoundGroup = styled.div`
   justify-content: center;
   &:before {
     content: "Round";
+    color: ${GENERIC.DISPLAY_ROUNDS.label.color};
     padding-right:10px;
   }
 `;
@@ -49,7 +53,7 @@ class DisplayRounds extends React.Component {
       return (
         <Round
           size={isCurRound ? sizeMapping.large : sizeMapping.medium}
-          active={isCurRound}
+          activeKey={isCurRound ? 'active' : 'inactive'}
           key={i}
         >
           {isCurRound && curRound}

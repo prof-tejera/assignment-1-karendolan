@@ -4,38 +4,46 @@
  import React from "react";
  import PropTypes from "prop-types";
  import styled from "styled-components";
- import {STATUS} from "../../utils/helpers"
+ import { STATUS } from "../../utils/helpers"
 
  import Button from "./Button";
 
  const Container = styled.div`
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: space-around;
 `;
 
  class ButtonPanel extends React.Component {
+
+   // Change button text based on status
+   getText(status) {
+     switch (status) {
+       case STATUS.RUNNING:
+       case STATUS.RESTING:
+        return 'Pause';
+       case STATUS.RESET:
+       case STATUS.PAUSED:
+       default:
+        return 'Start';
+      };
+   };
+
    render() {
-     const {onStart, onStop, onReset, status} = this.props;
+     const {onClick, onReset, status} = this.props;
      return (
        <Container>
          <Button
            size='large'
            active={false}
-           text='reset'
+           text='Reset'
            onClick={onReset}
          />
           <Button
-            size='small'
-            active={false}
-            text='stop'
-            onClick={onStop}
-          />
-          <Button
             size='large'
             active={true}
-            text='start'
-            onClick={onStart}
+            text={this.getText(status)}
+            onClick={onClick}
           />
        </Container>
      )
