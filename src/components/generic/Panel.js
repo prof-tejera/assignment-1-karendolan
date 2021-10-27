@@ -44,7 +44,7 @@
 
  class Panel extends React.Component {
    render() {
-     const {seconds, curSecond, inputs, displayTimes, displayRounds, onStart, onStop, status} = this.props;
+     const {inputs, displayTimes, displayRounds, onClick, onReset, status} = this.props;
      return (
        <PanelStyle>
         <InputsContainer>
@@ -57,6 +57,8 @@
         <ControlsContainer>
           <ButtonPanel
             status={status}
+            onClick={onClick}
+            onReset={onReset}
           />
         </ControlsContainer>
        </PanelStyle>

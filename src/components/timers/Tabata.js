@@ -70,8 +70,8 @@ class Tabata extends React.Component {
     ];
     const displayRounds = [
       <DisplayRounds
-        numRounds={4} //{rounds}
-        curRound={3} //{curRound}
+        numRounds={rounds || 4} //TODO: remove temp count
+        curRound={curRound || 3} //TODO: remove temp count
       />
     ];
 
@@ -84,9 +84,6 @@ class Tabata extends React.Component {
             inputs={inputs}
             displayTimes={displayTimes}
             displayRounds={displayRounds}
-            // onStart={onStartHandler}
-            // onStop={onStopHandler}
-            // onPause={onPauseHandler}
         />
       </div>
     );

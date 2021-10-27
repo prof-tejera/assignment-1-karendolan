@@ -19,12 +19,20 @@ class XY extends React.Component {
     };
   }
 
-  onChange = (event) => {
+  onChange(event) {
     const num = parseInt(event.target.value);
     this.setState(
       {seconds: num > 0 ? num : 0,
       curSecond: num > 0 ? num : 0}
     );
+  }
+
+  onResetHandler() {
+    // TODO: stop and clear input
+  }
+
+  onClickHandler() {
+    // TODO: change status to starting
   }
 
   render() {
@@ -64,7 +72,7 @@ class XY extends React.Component {
     const displayRounds = [
       <DisplayRounds
         numRounds={10} //{rounds}
-        curRound={10} //{curRound}
+        curRound={curRound || 10} //{curRound}
       />
     ];
 
@@ -77,9 +85,8 @@ class XY extends React.Component {
             displayRounds={displayRounds}
             inputs={inputs}
             displayTimes={displayTimes}
-            // onStart={onStartHandler}
-            // onStop={onStopHandler}
-            // onPause={onPauseHandler}
+            onReset={this.onReset}
+            onClick={this.onClick}
         />
       </div>
     );

@@ -76,7 +76,7 @@ const GENERIC = {
       background: COLOR.primary0.color,
     },
     CONTROLS: {
-      background: COLOR.primary0.color,
+      background: COLOR.primary2.color,
     },
   }
 }
