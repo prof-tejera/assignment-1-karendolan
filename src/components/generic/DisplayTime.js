@@ -15,7 +15,6 @@ const Container = styled.div`
   color: ${(props) => {
     return GENERIC.DISPLAY_TIME[props.activeKey].color
   }};
-  padding: 20px;
 `;
 
 const Label = styled.span`

@@ -29,12 +29,18 @@
  const InputsContainer = styled.div`
    color: ${GENERIC.PANEL.INPUT.color};
    background-color: ${GENERIC.PANEL.INPUT.background};
-   padding: 40px;
+   padding: 40px 2px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 `;
 
   const DisplayContainer = styled.div`
     background-color: ${GENERIC.PANEL.DISPLAY.background};
-    padding: 40px 20px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   `;
 
   const ControlsContainer = styled.div`

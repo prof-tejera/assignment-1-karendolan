@@ -5,10 +5,17 @@ import GENERIC  from "../../shared/COLOR";
 
 const primaryColor =  GENERIC.INPUT.background;
 
+const InputContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 330px;
+`;
+
 const InputStyled = styled.input`
-  display: inline-block;
-  width: 100px;
+  flex: 1;
   padding: 5px 10px;
+  width: 80px;
   text-align: left;
   text-decoration: none;
   color: ${GENERIC.INPUT.color};
@@ -19,6 +26,7 @@ const InputStyled = styled.input`
 `;
 
 const LabelStyled = styled.label`
+  flex: 1;
   color: ${GENERIC.INPUT.color};
 `;
 
@@ -26,11 +34,12 @@ class Input extends React.Component {
   render() {
     const {value, onChange, name, label, maxNum} = this.props;
     return (
-      <div>
+      <InputContainer>
         <LabelStyled
           htmlFor={name}
         >
           {label}
+          :
         </LabelStyled>
         <InputStyled
           id={name}
@@ -41,7 +50,7 @@ class Input extends React.Component {
           onChange={onChange}
           value={value > 0 ? value : ""}
         />
-      </div>
+      </InputContainer>
     )
   }
 };

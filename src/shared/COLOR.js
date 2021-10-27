@@ -33,7 +33,7 @@ const GENERIC = {
     },
     inactive: {
       color: COLOR.secondary21.color,
-      background: COLOR.secondary23.color
+      background: COLOR.primary3.color
     },
   },
   DISPLAY_TIME: {
