@@ -6,7 +6,7 @@ import GENERIC  from "../../shared/COLOR";
 const fontSizeMap = {
   small: '.8em',
   medium: '1em',
-  large: '3em',
+  large: '3.4em',
 };
 
 const Container = styled.div`

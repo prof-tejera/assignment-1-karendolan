@@ -37,7 +37,7 @@
 
   const DisplayContainer = styled.div`
     background-color: ${GENERIC.PANEL.DISPLAY.background};
-    padding: 50px 20px;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
