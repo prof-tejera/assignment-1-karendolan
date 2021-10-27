@@ -10,6 +10,7 @@ const InputContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   width: 330px;
+  background-color: ${GENERIC.PANEL.INPUT.background};
 `;
 
 const InputStyled = styled.input`
@@ -28,6 +29,7 @@ const InputStyled = styled.input`
 const LabelStyled = styled.label`
   flex: 1;
   color: ${GENERIC.INPUT.color};
+  text-align: right;
 `;
 
 class Input extends React.Component {
@@ -106,6 +108,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   name: 'Input',
+  label: 'Input',
   value: undefined,
   maxNum: 86400, // 24 hours
 };

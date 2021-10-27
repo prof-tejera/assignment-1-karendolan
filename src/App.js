@@ -9,6 +9,7 @@ const Container = styled.div`
   background: #f0f6fb;
   height: 100vh;
   overflow: auto;
+  font-size: 1.4rem;
   /* Using Gill Sans because it's fun, easy to read, and emits energy */
   font-family: "Gill Sans", sans-serif;
 `;

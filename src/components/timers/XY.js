@@ -19,7 +19,7 @@ class XY extends React.Component {
     };
   }
 
-  onChange(event) {
+  onChange = (event) => {
     const num = parseInt(event.target.value);
     this.setState(
       {seconds: num > 0 ? num : 0,
@@ -71,8 +71,8 @@ class XY extends React.Component {
     ]
     const displayRounds = [
       <DisplayRounds
-        numRounds={10} //{rounds}
-        curRound={curRound || 10} //{curRound}
+        numRounds={8} //{rounds}
+        curRound={curRound || 3} //{curRound}
       />
     ];
 

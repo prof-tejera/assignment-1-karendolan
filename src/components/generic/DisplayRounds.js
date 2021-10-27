@@ -16,7 +16,6 @@ const Container = styled.div`
 `;
 
 const Round = styled.span`
-  display: block;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
   background-color: ${(props) => {
