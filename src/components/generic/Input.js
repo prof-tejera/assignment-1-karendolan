@@ -66,7 +66,7 @@ Input.docs =   {
         key: 'name',
         description: 'Name of input field',
         type: 'string',
-        defaultValue: 'entry',
+        defaultValue: 'Input',
       },
       {
         prop: 'label',

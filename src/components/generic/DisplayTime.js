@@ -68,6 +68,13 @@ DisplayTime.docs =   {
         defaultValue: 'Work',
       },
       {
+        prop: 'active',
+        key: 'active',
+        description: 'Indicator of primary display time',
+        type: 'boolean',
+        defaultValue: 'true',
+      },
+      {
         prop: 'size',
         key: 'size',
         description: 'Size of display time',
