@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/assignment-1-karendolan/static/css/main.9a02c093.chunk.css",
+    "main.js": "/assignment-1-karendolan/static/js/main.90fdf69b.chunk.js",
+    "main.js.map": "/assignment-1-karendolan/static/js/main.90fdf69b.chunk.js.map",
+    "runtime-main.js": "/assignment-1-karendolan/static/js/runtime-main.366bf981.js",
+    "runtime-main.js.map": "/assignment-1-karendolan/static/js/runtime-main.366bf981.js.map",
+    "static/js/2.5bc4a1e6.chunk.js": "/assignment-1-karendolan/static/js/2.5bc4a1e6.chunk.js",
+    "static/js/2.5bc4a1e6.chunk.js.map": "/assignment-1-karendolan/static/js/2.5bc4a1e6.chunk.js.map",
+    "index.html": "/assignment-1-karendolan/index.html",
+    "static/css/main.9a02c093.chunk.css.map": "/assignment-1-karendolan/static/css/main.9a02c093.chunk.css.map",
+    "static/js/2.5bc4a1e6.chunk.js.LICENSE.txt": "/assignment-1-karendolan/static/js/2.5bc4a1e6.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.366bf981.js",
+    "static/js/2.5bc4a1e6.chunk.js",
+    "static/css/main.9a02c093.chunk.css",
+    "static/js/main.90fdf69b.chunk.js"
+  ]
+}
