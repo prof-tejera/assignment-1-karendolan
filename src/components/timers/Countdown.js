@@ -38,6 +38,7 @@ class Countdown extends React.Component {
       <DisplayTime
         seconds={curSecond}
         size='large'
+        active={true}
       />
     ]
 

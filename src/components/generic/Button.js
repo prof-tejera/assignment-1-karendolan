@@ -3,9 +3,8 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import GENERIC  from "../../shared/COLOR";
 
-const primaryColor =  GENERIC.BUTTON_COLORS.active.color;
-
 const sizeMapping = {
+  // In pixels
   small: 60,
   medium: 80,
   large: 100,
@@ -56,52 +55,57 @@ class Button extends React.Component {
   }
 };
 
+Button.propTypes = {
+  // Indicates if this is a primary or secondary button
+  active: PropTypes.bool,
+  // The relative size of the button to display
+  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  // The text to display in the button
+  text: PropTypes.string,
+  // The call back to use when the button is clicked
+  onClick: PropTypes.func.isRequired,
+};
+
+Button.defaultProps = {
+  actve: true,
+  size: 'medium',
+  text: 'Press',
+};
+
 // Class description for the docs
 Button.docs =   {
     title: 'Button ',
+    component: <Button onClick={()=>{}} />,
     props: [
+      {
+        prop: 'active',
+        key: 'active',
+        description: 'Wether this is the active button',
+        type: 'boolean',
+        defaultValue: String(Button.defaultProps.actve),
+      },
       {
         prop: 'size',
         key: 'size',
         description: "Changes the size of the button",
         type: "string",
-        defaultValue: "medium",
-      },
-      {
-        prop: 'active',
-        key: 'active',
-        description: 'Identifies the primary button',
-        type: 'boolean',
-        defaultValue: 'true',
+        defaultValue: Button.defaultProps.size,
       },
       {
         prop: 'text',
         key: 'text',
         description: 'The text to display on the button',
         type: 'string',
-        defaultValue: 'none',
+        defaultValue: Button.defaultProps.text,
       },
       {
         prop: 'onClick',
         key: 'onClick',
         description: 'Callback for click event on button',
         type: 'function',
-        defaultValue: 'ClickMe',
+        defaultValue: 'none',
       }
     ]
-}
-
-Button.propTypes = {
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  color: PropTypes.string,
-  text: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
-};
-
-Button.defaultProps = {
-  size: 'medium',
-  text: 'ClickMe',
-  color: primaryColor,
 };
 
 export default Button;

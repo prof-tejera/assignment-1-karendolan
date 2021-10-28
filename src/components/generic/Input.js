@@ -57,23 +57,45 @@ class Input extends React.Component {
   }
 };
 
+Input.propTypes = {
+  // The input element name identifier to use
+  name: PropTypes.string,
+  // The display text to use for the input
+  label: PropTypes.string,
+  // The value to display in the input
+  value: PropTypes.number,
+  // The max number allowed in the input
+  maxNum: PropTypes.number,
+  // The callback to use when the input changes
+  onChange: PropTypes.func.isRequired,
+};
+
+Input.defaultProps = {
+  name: 'Input',
+  label: 'Input',
+  value: undefined,
+  maxNum: 86400, // 24 hours
+};
+
+
 // Class description for the docs
 Input.docs =   {
     title: 'Input ',
+    component: <Input  onChange={()=>{}} />,
     props: [
       {
         prop: 'name',
         key: 'name',
         description: 'Name of input field',
         type: 'string',
-        defaultValue: 'Input',
+        defaultValue: Input.defaultProps.name,
       },
       {
         prop: 'label',
         key: 'label',
         description: 'label for input field',
         type: 'string',
-        defaultValue: 'Input',
+        defaultValue: Input.defaultProps.label,
       },
       {
         prop: 'value',
@@ -87,30 +109,16 @@ Input.docs =   {
         key: 'maxNum',
         description: 'Maximum input number',
         type: 'number',
-        defaultValue: '86400',
+        defaultValue: Input.defaultProps.maxNum,
       },
       {
         prop: 'onChange',
         key: 'onChange',
         description: "Callback for change of input",
         type: "function",
-        defaultValue: "none",
+        defaultValue: 'none',
       }
     ]
 }
-
-Input.propTypes = {
-  name: PropTypes.string,
-  value: PropTypes.number,
-  maxNum: PropTypes.number,
-  onChange: PropTypes.func.isRequired,
-};
-
-Input.defaultProps = {
-  name: 'Input',
-  label: 'Input',
-  value: undefined,
-  maxNum: 86400, // 24 hours
-};
 
 export default Input;

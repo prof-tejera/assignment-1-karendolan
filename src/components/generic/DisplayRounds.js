@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import GENERIC  from "../../shared/COLOR";
 
-// Default color for doc render
-const primaryColor =  GENERIC.DISPLAY_ROUNDS.inactive.color;
-
 const sizeMapping = {
   small: 20,
   medium: 40,
@@ -69,7 +66,19 @@ class DisplayRounds extends React.Component {
       </Container>
     );
   }
-}
+};
+
+DisplayRounds.propTypes = {
+  // The number of rounds to display
+  numRounds: PropTypes.number,
+  // The round that is active
+  curRound: PropTypes.number,
+};
+
+DisplayRounds.defaultProps = {
+  curRound: 3,
+  numRounds: 4,
+};
 
 // Class description for the docs
 DisplayRounds.docs =   {
@@ -81,35 +90,16 @@ DisplayRounds.docs =   {
         key: 'numRounds',
         description: 'The total number of rounds',
         type: 'number',
-        defaultValue: '4',
+        defaultValue: DisplayRounds.defaultProps.numRounds,
       },
       {
         prop: 'curRound',
         key: 'curRound',
         description: "The number of the current round",
         type: 'number',
-        defaultValue: '2',
+        defaultValue: DisplayRounds.defaultProps.curRound,
       },
-      {
-        prop: 'color',
-        key: 'color',
-        description: "The color of the active round",
-        type: "string",
-        defaultValue: primaryColor,
-      }
     ]
-}
-
-DisplayRounds.propTypes = {
-  numRounds: PropTypes.number,
-  curRound: PropTypes.number,
-  color: PropTypes.string,
-};
-
-DisplayRounds.defaultProps = {
-  color: primaryColor,
-  curRound: 3,
-  numRounds: 4,
 };
 
 export default DisplayRounds;

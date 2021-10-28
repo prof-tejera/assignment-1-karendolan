@@ -49,45 +49,14 @@ class DisplayTime extends React.Component {
   }
 };
 
-// Class description for the docs
-DisplayTime.docs =   {
-    title: 'Display Time ',
-    props: [
-      {
-        prop: 'seconds',
-        key: 'seconds',
-        description: "Changes the time diplayed",
-        type: "integer",
-        defaultValue: 0,
-      },
-      {
-        prop: 'label',
-        key: 'label',
-        description: 'Optional label for display time',
-        type: 'string',
-        defaultValue: 'Work',
-      },
-      {
-        prop: 'active',
-        key: 'active',
-        description: 'Indicator of primary display time',
-        type: 'boolean',
-        defaultValue: 'true',
-      },
-      {
-        prop: 'size',
-        key: 'size',
-        description: 'Size of display time',
-        type: 'string',
-        defaultValue: 'medium',
-      }
-    ]
-}
-
 DisplayTime.propTypes = {
+  // The number of seconds to display
   seconds: PropTypes.number,
+  // The label to display before the time display
   label: PropTypes.string,
+  // The relative display size to use
   size: PropTypes.string,
+  // Wether this is the a primary display or secondary
   active: PropTypes.bool,
 };
 
@@ -95,7 +64,43 @@ DisplayTime.defaultProps = {
   seconds: 0,
   label: 'Work',
   size: 'medium',
-  active: true,
+  active: false,
 };
+
+// Class description for the docs
+DisplayTime.docs =   {
+    title: 'Display Time ',
+    component: <DisplayTime />,
+    props: [
+      {
+        prop: 'seconds',
+        key: 'seconds',
+        description: "Changes the time diplayed",
+        type: "integer",
+        defaultValue: DisplayTime.defaultProps.seconds,
+      },
+      {
+        prop: 'label',
+        key: 'label',
+        description: 'Optional label for display time',
+        type: 'string',
+        defaultValue: DisplayTime.defaultProps.label,
+      },
+      {
+        prop: 'active',
+        key: 'active',
+        description: 'Wether this is the active time display',
+        type: 'boolean',
+        defaultValue: String(DisplayTime.defaultProps.active),
+      },
+      {
+        prop: 'size',
+        key: 'size',
+        description: 'Size of display time',
+        type: 'string',
+        defaultValue: DisplayTime.defaultProps.size,
+      }
+    ]
+}
 
 export default DisplayTime;

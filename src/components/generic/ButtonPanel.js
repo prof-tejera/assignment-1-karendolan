@@ -51,15 +51,44 @@
  }
 
  ButtonPanel.propTypes = {
-   onStart: PropTypes.func,
-   onStop: PropTypes.func,
-   onPause: PropTypes.func,
+   // Callback for the primary button
+   onClick: PropTypes.func,
+   // Callback for the reset button
    onReset: PropTypes.func,
-   state: PropTypes.oneOf(STATUS),
+   // Status of the timer
+   status: PropTypes.oneOf(STATUS),
  };
 
  ButtonPanel.defaultProps = {
-   state: STATUS.RESET
+   status: STATUS.RESET,
  };
+ // Class param description for the docs=
+ ButtonPanel.docs =   {
+     title: 'ButtonPanel ',
+     component: <ButtonPanel  onClick={()=>{}} />,
+     props: [
+       {
+         prop: 'onClick',
+         key: 'onClick',
+         description: 'Callback for clicking primary button',
+         type: 'function',
+         defaultValue: 'none',
+       },
+       {
+         prop: 'onReset',
+         key: 'onReset',
+         description: 'Callback for clicking reset button',
+         type: 'function',
+         defaultValue: 'none',
+       },
+       {
+         prop: 'status',
+         key: 'status',
+         description: 'Status of the timer',
+         type: 'string',
+         defaultValue: ButtonPanel.defaultProps.status,
+       }
+     ]
+ }
 
  export default ButtonPanel;

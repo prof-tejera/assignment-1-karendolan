@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class InputMoveToFunction extends React.Component {
+class HelperFunctionsTODO extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,23 +50,3 @@ class InputMoveToFunction extends React.Component {
     );
   }
 };
-
-// Class description for the docs
-InputMoveToFunction.docs =   {
-    title: 'Input ',
-    props: [
-      {
-        prop: 'onSubmit',
-        key: 'onSubmit',
-        description: "Callback for submission of input time",
-        type: "function",
-        defaultValue: "none",
-      }
-    ]
-}
-
-InputMoveToFunction.propTypes = {
-  onSubmit: PropTypes.func,
-};
-
-export default InputMoveToFunction;

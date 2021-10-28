@@ -72,52 +72,73 @@
    };
  }
 
- // Class description for the docs
- Panel.docs =   {
-     title: 'Panel ',
-     props: [
-       {
-         prop: 'seconds',
-         key: 'seconds',
-         description: "Changes the time diplayed",
-         type: "integer",
-         defaultValue: 0,
-       },
-       {
-         prop: 'label',
-         key: 'label',
-         description: 'Optional label for display time',
-         type: 'string',
-         defaultValue: 'none',
-       },
-       {
-         prop: 'size',
-         key: 'size',
-         description: 'Size of display time',
-         type: 'string',
-         defaultValue: 'medium',
-       }
-     ]
- }
-
  Panel.propTypes = {
-   curSecond: PropTypes.number,
-   totalSeconds: PropTypes.number,
+   // An array of display round objects
    displayRound: PropTypes.arrayOf(DisplayRounds),
+   // An array of display time objects
    displayTime: PropTypes.arrayOf(DisplayTime),
-   restSeconds: PropTypes.number,
+   // An Array of input objects
    inputs: PropTypes.arrayOf(Input),
-   onStart: PropTypes.func,
-   onStop: PropTypes.func,
-   onPause: PropTypes.func,
+   // Callback for clicking the primary button
+   onClick: PropTypes.func,
+   // Callback for clicking the reset button
    onReset: PropTypes.func,
-   state: PropTypes.oneOf(STATUS),
+   // The status of the timer (running, paused, etc)
+   status: PropTypes.oneOf(STATUS),
  };
 
  Panel.defaultProps = {
-   size: "medium",
-   text: "ClickMe",
-   color: primaryColor,
+    status: STATUS.RESET,
  };
+
+ // Class description for the docs
+ Panel.docs =   {
+     title: 'Panel ',
+     component: <Panel onClick={()=>{}} />,
+     props: [
+       {
+         prop: 'inputs',
+         key: 'inputs',
+         description: "An Array of Input objects",
+         type: "[Input]",
+         defaultValue: "none",
+       },
+       {
+         prop: 'displayRound',
+         key: 'displayRound',
+         description: "An Array of DisplayRound objects",
+         type: "[DisplayRound]",
+         defaultValue: "none",
+       },
+       {
+         prop: 'displayTimes',
+         key: 'displayTimes',
+         description: "An Array of DisplayTimes objects",
+         type: "[DisplayTimes]",
+         defaultValue: "none",
+       },
+       {
+         prop: 'onClick',
+         key: 'onClick',
+         description: 'Callback for clicking primary button',
+         type: 'function',
+         defaultValue: 'none',
+       },
+       {
+         prop: 'onReset',
+         key: 'onReset',
+         description: 'Callback for clicking reset button',
+         type: 'function',
+         defaultValue: 'none',
+       },
+       {
+         prop: 'status',
+         key: 'status',
+         description: 'Status of the timer',
+         type: 'string',
+         defaultValue: Panel.defaultProps.status,
+       }
+     ]
+ }
 
  export default Panel;
