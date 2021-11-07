@@ -21,7 +21,7 @@ const ButtonStyled = styled.input`
   font-size: .9em;
   text-decoration: none;
   background-color: ${(props) => {
-    return GENERIC.BUTTON_COLORS[props.activeKey].background
+    return GENERIC.BUTTON_COLORS[props.activeKey].background 
   }};
   color: ${(props) => {
     return GENERIC.BUTTON_COLORS[props.activeKey].color

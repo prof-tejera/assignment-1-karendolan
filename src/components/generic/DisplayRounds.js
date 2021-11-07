@@ -45,7 +45,7 @@ class DisplayRounds extends React.Component {
   render() {
     // construct the round row
     const { numRounds, curRound } = this.props;
-    const dots = Array.from(Array(numRounds), (e,i)=>i+1).map(i => {
+    const dots = Array.from(Array(numRounds), (e,i)=>i+1).map(i => { 
       const isCurRound = (i === curRound);
       return (
         <Round

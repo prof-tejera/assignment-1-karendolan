@@ -3,7 +3,7 @@
 /* Palette URL: http://paletton.com/#uid=34h0r1klhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaIklhllaDvZfYqDqyg2vUaI */
 /* Feel free to copy&paste color codes to your application */
 /* As hex codes */
-const COLOR = {
+const COLOR = { 
   primary0: { color: '#433075' },	/* Main Primary color */
   primary1: { color: '#897BAF' },
   primary2: { color: '#635192' },
@@ -24,7 +24,7 @@ const COLOR = {
   secondary24: { color: '#553C00' },
 };
 
-const GENERIC = {
+const GENERIC = { 
   COLOR,
   BUTTON_COLORS:{
     active: {
