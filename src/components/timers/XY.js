@@ -58,7 +58,7 @@ class XY extends React.Component {
     const displayTimes = [
       <DisplayTime
         seconds={workSecs}
-        key="1"
+        key="1" 
         active={false}
       />,
       <DisplayTime

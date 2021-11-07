@@ -34,7 +34,7 @@ class Documentation extends React.Component {
         <DocumentComponent
           key={title}
           title= {title}
-          component= <CurrComp />
+          component= <CurrComp /> 
           propDocs={props}
         />
       )

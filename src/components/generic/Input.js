@@ -70,7 +70,7 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-Input.defaultProps = {
+Input.defaultProps = { 
   name: 'Input',
   label: 'Input',
   value: undefined,
@@ -95,7 +95,7 @@ Input.docs =   {
         key: 'label',
         description: 'label for input field',
         type: 'string',
-        defaultValue: Input.defaultProps.label,
+        defaultValue: Input.defaultProps.label, 
       },
       {
         prop: 'value',

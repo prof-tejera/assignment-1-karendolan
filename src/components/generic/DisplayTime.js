@@ -28,8 +28,8 @@ class DisplayTime extends React.Component {
     // const seconds = 7446; //2hr, 4 min, 6 secs
     const { seconds, label, active, size } = this.props;
     const textSize = fontSizeMap[size];
-    // TODO: Move this to Utils area?
-    // Split the seconds into Hour :  Min : Sec
+    // TODO: Move this to Utils area? 
+    // Split the seconds into Hour :  Min : Sec 
     const hour = Math.floor(seconds / (60 * 60));
     const min = Math.floor(seconds % (60 * 60) / 60);
     const sec = Math.floor(seconds % (60 * 60) % 60);
